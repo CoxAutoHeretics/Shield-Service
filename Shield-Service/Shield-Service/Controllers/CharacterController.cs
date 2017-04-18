@@ -4,18 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Shield_Service.Models;
+using ShieldService.Models;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using Shield_Service.Tools;
 
-namespace Shield_Service.Controllers
+namespace ShieldService.Controllers
 {
     public class CharacterController : ApiController
     {
-        private HttpClient _client;
-
+        private List<Character> _cache = MarvelClient.GetAllCharacters();
+        
         public CharacterController()
         {
-            _client = new HttpClient();
-            _client.MaxResponseContentBufferSize = 524288;    // bytes
         }
 
         // GET: api/Character
@@ -29,9 +30,10 @@ namespace Shield_Service.Controllers
         {
             Character c = new Character()
             {
-                ID = id,
-                Name = "Wolverine",
-                BirthDate = DateTime.Parse("11-29-1897")
+                id = id,
+                name = "Wolverine",
+                thumbnail = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                description = "This guy's bad news for anyone with a vowel in their name."
             };
             return c;
         }

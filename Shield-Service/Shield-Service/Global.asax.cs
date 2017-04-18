@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 
-namespace Shield_Service
+namespace ShieldService
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

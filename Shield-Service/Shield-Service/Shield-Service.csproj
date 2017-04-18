@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Models\Character.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MarvelClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

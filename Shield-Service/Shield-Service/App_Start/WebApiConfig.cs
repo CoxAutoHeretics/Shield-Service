@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Shield_Service
+namespace ShieldService
 {
     public static class WebApiConfig
     {
